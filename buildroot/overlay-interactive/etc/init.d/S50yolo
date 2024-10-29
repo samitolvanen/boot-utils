@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$1" = "start" ]; then
+    cat /proc/version
+    mkdir -p /lib/modules
+    mount -t ext4 /dev/vda /lib/modules || mount -t ext4 /dev/sda /lib/modules
+    ln -s /lib/modules/kselftest_install /kselftest_install
+fi
